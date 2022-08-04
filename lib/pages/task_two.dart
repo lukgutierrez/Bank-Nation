@@ -9,6 +9,8 @@ class TaskTwo extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Color(0xFFF32AFDF),
           elevation: 0,
+          automaticallyImplyLeading: false,
+          //leading: Image(image: AssetImage("assets/image/flex.png")),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -74,8 +76,18 @@ class TaskTwo extends StatelessWidget {
                               ],
                             ),
                             TextField(
+                                keyboardType: TextInputType.number,
+                                cursorColor: Color(0xFFF39555),
                                 textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 50.0,
+                                    fontWeight: FontWeight.normal,
+                                    color: Color(0xFFF39555)),
                                 decoration: InputDecoration(
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Color(0xFFFA9A9A9)),
+                                    ),
                                     hintText: "0,00",
                                     hintStyle: TextStyle(
                                         fontSize: 50.0,
@@ -102,7 +114,7 @@ class TaskTwo extends StatelessWidget {
                       style: TextStyle(
                           color: Color(0xFFF32AFDF),
                           fontSize: 15.0,
-                          fontWeight: FontWeight.normal),
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                   Container(
@@ -151,14 +163,21 @@ class TaskTwo extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
-                              Text(r"$ 000,00",
+                              Text(r"$ 643.600,00",
                                   style: TextStyle(
                                       color: Color(0xFFF32AFDF),
                                       fontSize: 25.0,
                                       fontWeight: FontWeight.bold)),
-                              Icon(
-                                Icons.arrow_downward_outlined,
-                                color: Color(0xFFF39555),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SizedBox(
+                                  width: 20,
+                                  height: 20,
+                                  child: Image(
+                                    image: AssetImage("assets/image/bajo.png"),
+                                    color: Color(0xFFF39555),
+                                  ),
+                                ),
                               )
                             ],
                           ),
@@ -181,7 +200,7 @@ class TaskTwo extends StatelessWidget {
                     style: TextStyle(
                         color: Color(0xFFF32AFDF),
                         fontSize: 15.0,
-                        fontWeight: FontWeight.normal),
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
                 Padding(
@@ -274,11 +293,19 @@ class TaskTwo extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: TextField(
+                            keyboardType: TextInputType.number,
+                            style: TextStyle(
+                                color: Color(0xFFF32AFDF),
+                                fontWeight: FontWeight.w400),
                             decoration: InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: Color(0xFFFA9A9A9)),
+                                ),
                                 hintText: "CBU/CVU",
                                 hintStyle: TextStyle(
-                                    fontWeight: FontWeight.w300,
-                                    color: Colors.black)),
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFFF32AFDF))),
                           ),
                         )
                       ],
