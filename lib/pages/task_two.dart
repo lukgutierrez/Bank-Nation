@@ -38,74 +38,75 @@ class TaskTwo extends StatelessWidget {
                         bottomLeft: Radius.circular(20),
                       ),
                     )),
-                Positioned(
-                  left: 40.0,
-                  bottom: -120,
-                  child: Stack(
-                    children: [
-                      Container(
-                        width: 280.0,
-                        height: 180.0,
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Positioned(
+                      left: 10.0,
+                      bottom: -100,
+                      child: Container(
                         color: Colors.white,
-                        //   child: Image(
-                        //       image: AssetImage("assets/image/circulo.png")),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Monto",
-                                style: TextStyle(
-                                  color: Color(0xFFF32AFDF),
+                        width: 320.0,
+                        height: 150.0,
+                        child: Column(
+                          children: [
+                            Divider(
+                              height: 50,
+                              color: Colors.transparent,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Monto",
+                                  style: TextStyle(
+                                    color: Color(0xFFF32AFDF),
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                  width: 15.0,
-                                  height: 15.0,
-                                  child: Image(
-                                      image: AssetImage(
-                                          "assets/image/dolar.png"))),
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
+                                SizedBox(
+                                    width: 15.0,
+                                    height: 15.0,
+                                    child: Image(
+                                      image:
+                                          AssetImage("assets/image/dolar.png"),
+                                      color: Color(0xFFF32AFDF),
+                                    )),
+                              ],
+                            ),
+                            TextField(
+                                textAlign: TextAlign.center,
+                                decoration: InputDecoration(
+                                    hintText: "0,00",
+                                    hintStyle: TextStyle(
+                                        fontSize: 50.0,
+                                        fontWeight: FontWeight.normal,
+                                        color: Color(0xFFF39555))))
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
-            SizedBox(
-                width: 280.0,
-                height: 100.0,
-                child: Center(
-                  child: TextField(
-                      decoration: InputDecoration(
-                          hintText: "0,00",
-                          hintStyle: TextStyle(
-                              fontSize: 50.0,
-                              fontWeight: FontWeight.normal,
-                              color: Color(0xFFF39555)))),
-                )),
 
             //CUENTA ORIGEN
 
             Container(
-              color: Colors.amber,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Cuenta origen",
-                    style: TextStyle(
-                        color: Color(0xFFF32AFDF),
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.normal),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      "Cuenta origen",
+                      style: TextStyle(
+                          color: Color(0xFFF32AFDF),
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.normal),
+                    ),
                   ),
                   Container(
-                    width: 280.0,
+                    width: 320.0,
                     height: 100.0,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -150,7 +151,7 @@ class TaskTwo extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             children: [
-                              Text(r"$ 76.540",
+                              Text(r"$ 000,00",
                                   style: TextStyle(
                                       color: Color(0xFFF32AFDF),
                                       fontSize: 25.0,
@@ -173,114 +174,134 @@ class TaskTwo extends StatelessWidget {
 
             Column(
               children: [
-                Text(
-                  "Destinatario",
-                  style: TextStyle(
-                      color: Color(0xFFF32AFDF),
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.normal),
-                ),
-                Container(
-                  width: 280.0,
-                  height: 150.0,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(20),
-                          bottomLeft: Radius.circular(20),
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20)),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 15.0,
-                            offset: Offset(0.0, 0.75))
-                      ],
-                      color: Colors.white),
-                  child: Column(
-                    children: [
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.all(2),
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFFA9A9A9),
-                                        shape: BoxShape.circle,
-                                      ),
-                                      width: 10.0,
-                                      height: 10.0,
-                                    ),
-                                    Text("Agenda")
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.all(2),
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFFA9A9A9),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    width: 10.0,
-                                    height: 10.0,
-                                  ),
-                                  Text("Alias")
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.all(2),
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFF39555),
-                                      shape: BoxShape.circle,
-                                    ),
-                                    width: 10.0,
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    "CBU/CVU",
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                          Divider(
-                            color: Color(0xFFFA9A9A9),
-                          )
-                        ],
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                            hintText: "CBU/CVU",
-                            hintStyle: TextStyle(
-                                fontWeight: FontWeight.w300,
-                                color: Colors.black)),
-                      )
-                    ],
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    "Destinatario",
+                    style: TextStyle(
+                        color: Color(0xFFF32AFDF),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.normal),
                   ),
                 ),
-                SizedBox(
-                  height: 40.0,
-                  width: 200.0,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Color(0xFFF39555)),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ))),
-                    onPressed: () {},
-                    child: Text("Transferir"),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    width: 320.0,
+                    height: 180.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(10),
+                            bottomLeft: Radius.circular(10),
+                            topLeft: Radius.circular(10),
+                            topRight: Radius.circular(10)),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 15.0,
+                              offset: Offset(0.0, 0.75))
+                        ],
+                        color: Colors.white),
+                    child: Column(
+                      children: [
+                        Column(
+                          children: [
+                            Divider(
+                              height: 30.0,
+                              color: Colors.transparent,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.all(2),
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFFA9A9A9),
+                                          shape: BoxShape.circle,
+                                        ),
+                                        width: 10.0,
+                                        height: 10.0,
+                                      ),
+                                      Text("Agenda")
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.all(2),
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFFA9A9A9),
+                                          shape: BoxShape.circle,
+                                        ),
+                                        width: 10.0,
+                                        height: 10.0,
+                                      ),
+                                      Text("Alias")
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.all(2),
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF39555),
+                                          shape: BoxShape.circle,
+                                        ),
+                                        width: 10.0,
+                                        height: 10.0,
+                                      ),
+                                      Text(
+                                        "CBU/CVU",
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Divider(
+                                color: Color(0xFFFA9A9A9),
+                              ),
+                            )
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: TextField(
+                            decoration: InputDecoration(
+                                hintText: "CBU/CVU",
+                                hintStyle: TextStyle(
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.black)),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: SizedBox(
+                    height: 40.0,
+                    width: 320.0,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Color(0xFFF39555)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ))),
+                      onPressed: () {},
+                      child: Text("Transferir"),
+                    ),
                   ),
                 ),
               ],
