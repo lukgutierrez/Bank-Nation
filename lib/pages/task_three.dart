@@ -59,7 +59,7 @@ class TaskThree extends StatelessWidget {
                           ],
                           color: Colors.white),
                       width: 340.0,
-                      height: 800.0,
+                      height: 1060.0,
                       child: Column(
                         children: [
                           //ETAPA N° 1*****************************************************
@@ -148,12 +148,35 @@ class TaskThree extends StatelessWidget {
                             ),
                           ),
                           //ETAPA N° 3****************************************************************************************************
-                          Container(
-                            color: Colors.amber,
-                            child: ListTile(
-                              leading: Text("Para:"),
-                              title: Text("LUCIANO AGUSTIN GUTIERREZ"),
-                            ),
+
+                          Column(
+                            children: [
+                              ListDate("Para ", "LUCIANO GUTIERREZ"),
+                              Divider(
+                                color: Colors.black38,
+                              ),
+                              ListDate("CUIT ", "27432678724"),
+                              Divider(
+                                color: Colors.black38,
+                              ),
+                              ListDate("Alias ", "COSMOS.ATOMO.MADERA"),
+                              Divider(
+                                color: Colors.black38,
+                              ),
+                              ListDate("Banco ", "MACRO"),
+                              Divider(
+                                color: Colors.black38,
+                              ),
+                              ListDate("Motivo ", ""),
+                              Divider(
+                                color: Colors.black38,
+                              ),
+                              ListDate("Fechas ", "09/07/2022 11:42:50"),
+                              Divider(
+                                color: Colors.black38,
+                              ),
+                              ListDate("Cuenta Origen ", r"CA $****96472"),
+                            ],
                           )
                         ],
                       ),
@@ -167,4 +190,37 @@ class TaskThree extends StatelessWidget {
       ),
     );
   }
+}
+
+ListDate(date1, date2) {
+  return Container(
+    height: 80.0,
+    width: 340.0,
+    child: Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Row(
+        children: [
+          Expanded(
+              flex: 2,
+              child: Text(
+                date1,
+                style: TextStyle(
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.black),
+              )),
+          Expanded(
+            flex: 9,
+            child: Text(
+              date2,
+              style: TextStyle(
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.w800,
+                  color: Color(0xFFF0C7287)),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 }
