@@ -151,31 +151,34 @@ class TaskThree extends StatelessWidget {
 
                           Column(
                             children: [
-                              ListDate("Para ", "LUCIANO GUTIERREZ"),
+                              ListDate("Para ",
+                                  "LUCIANO GUTIERREZ AGUSTIN CARLOS", 1, 5),
                               Divider(
                                 color: Colors.black38,
                               ),
-                              ListDate("CUIT ", "27432678724"),
+                              ListDate("CUIT ", "27432678724", 1, 5),
                               Divider(
                                 color: Colors.black38,
                               ),
-                              ListDate("Alias ", "COSMOS.ATOMO.MADERA"),
+                              ListDate("Alias ", "COSMOS.ATOMO.MADERA.POLLERIA",
+                                  1, 5),
                               Divider(
                                 color: Colors.black38,
                               ),
-                              ListDate("Banco ", "MACRO"),
+                              ListDate("Banco ", "SANTANDER", 2, 8),
                               Divider(
                                 color: Colors.black38,
                               ),
-                              ListDate("Motivo ", ""),
+                              ListDate("Motivo ", "", 4, 4),
                               Divider(
                                 color: Colors.black38,
                               ),
-                              ListDate("Fechas ", "09/07/2022 11:42:50"),
+                              ListDate("Fechas ", "09/07/2022 11:42:50", 2, 7),
                               Divider(
                                 color: Colors.black38,
                               ),
-                              ListDate("Cuenta Origen ", r"CA $****96472"),
+                              ListDate(
+                                  "Cuenta Origen ", r"CA $****96472", 4, 5),
                             ],
                           )
                         ],
@@ -186,13 +189,78 @@ class TaskThree extends StatelessWidget {
               ),
             ],
           ),
+          Divider(height: 30.0, color: Colors.transparent),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    height: 45.0,
+                    width: 180.0,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                      ),
+                      // style: (
+
+                      //     backgroundColor:
+                      //         MaterialStateProperty.all(Colors.white),
+                      //     shape:
+                      //         MaterialStateProperty.all<RoundedRectangleBorder>(
+
+                      //             RoundedRectangleBorder(
+                      //       side: BorderSide(color: Color(0xFFF39555)),
+                      //       borderRadius: BorderRadius.circular(50.0),
+                      //     ))),
+                      onPressed: () {},
+                      child: Text(
+                        "Finalizar",
+                        style:
+                            TextStyle(fontSize: 18.0, color: Color(0xFFF39555)),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 45.0,
+                  width: 15,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    height: 45.0,
+                    width: 180.0,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Color(0xFFF39555)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ))),
+                      onPressed: () {},
+                      child: Text(
+                        "Otra Transferencia",
+                        style: TextStyle(fontSize: 17.0),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Divider(height: 50.0, color: Colors.transparent),
         ],
       ),
     );
   }
 }
 
-ListDate(date1, date2) {
+ListDate(date1, date2, flexz1, flexz2) {
   return Container(
     height: 80.0,
     width: 340.0,
@@ -201,20 +269,20 @@ ListDate(date1, date2) {
       child: Row(
         children: [
           Expanded(
-              flex: 2,
+              flex: flexz1,
               child: Text(
                 date1,
                 style: TextStyle(
-                    fontSize: 22.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.w200,
                     color: Colors.black),
               )),
           Expanded(
-            flex: 9,
+            flex: flexz2,
             child: Text(
               date2,
               style: TextStyle(
-                  fontSize: 22.0,
+                  fontSize: 20.0,
                   fontWeight: FontWeight.w800,
                   color: Color(0xFFF0C7287)),
             ),
