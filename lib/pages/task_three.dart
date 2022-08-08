@@ -10,6 +10,7 @@ class TaskThree extends StatelessWidget {
         child: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
             SliverAppBar(
+              automaticallyImplyLeading: false,
               floating: true,
               snap: true,
               elevation: 0,
