@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class TaskThree extends StatelessWidget {
-  const TaskThree({Key? key}) : super(key: key);
+  final String destinatario;
+  final String banco;
+  final String alias;
+  final String cuit;
+  final String dinero;
+  const TaskThree(
+      this.destinatario, this.alias, this.banco, this.cuit, this.dinero);
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String FechaActual = DateFormat("dd/MM/yyyy HH:mm:ss", 'es_ES').format(now);
     return Scaffold(
       body: SafeArea(
         child: NestedScrollView(
@@ -149,7 +159,7 @@ class TaskThree extends StatelessWidget {
                                           color: Colors.transparent,
                                         ),
                                         Text(
-                                          "2.570,00",
+                                          destinatario,
                                           style: TextStyle(
                                               fontSize: 60.0,
                                               fontWeight: FontWeight.w400,
@@ -162,24 +172,19 @@ class TaskThree extends StatelessWidget {
 
                                   Column(
                                     children: [
-                                      ListDate(
-                                          "Para ",
-                                          "LUCIANO GUTIERREZ AGUSTIN CARLOS",
-                                          1,
-                                          5),
+                                      ListDate("Para ", banco, 1, 5),
                                       Divider(
                                         color: Colors.black38,
                                       ),
-                                      ListDate("CUIT ", "27432678724", 1, 5),
+                                      ListDate("CUIT ", destinatario, 1, 5),
                                       Divider(
                                         color: Colors.black38,
                                       ),
-                                      ListDate("Alias ",
-                                          "COSMOS.ATOMO.MADERA.POLLERIA", 1, 5),
+                                      ListDate("Alias ", cuit, 1, 5),
                                       Divider(
                                         color: Colors.black38,
                                       ),
-                                      ListDate("Banco ", "SANTANDER", 2, 8),
+                                      ListDate("Banco ", cuit, 2, 8),
                                       Divider(
                                         color: Colors.black38,
                                       ),
@@ -187,8 +192,7 @@ class TaskThree extends StatelessWidget {
                                       Divider(
                                         color: Colors.black38,
                                       ),
-                                      ListDate("Fechas ", "09/07/2022 11:42:50",
-                                          2, 7),
+                                      ListDate("Fechas ", FechaActual, 2, 7),
                                       Divider(
                                         color: Colors.black38,
                                       ),

@@ -2,10 +2,18 @@ import 'package:bank_nation/pages/task_three.dart';
 import 'package:flutter/material.dart';
 
 class TaskTwo extends StatelessWidget {
-  const TaskTwo({Key? key}) : super(key: key);
+  final String destinatario;
+  final String banco;
+  final String cuit;
+  final String alias;
+
+  const TaskTwo(this.destinatario, this.alias, this.banco, this.cuit);
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController dinero = TextEditingController(text: "");
+    TextEditingController cbu = TextEditingController(text: "");
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFF32AFDF),
@@ -77,6 +85,7 @@ class TaskTwo extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: TextField(
+                                controller: dinero,
                                 keyboardType: TextInputType.number,
                                 cursorColor: Color(0xFFF39555),
                                 textAlign: TextAlign.center,
@@ -304,6 +313,7 @@ class TaskTwo extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: TextField(
+                          controller: cbu,
                           keyboardType: TextInputType.number,
                           style: TextStyle(
                               color: Color(0xFFF87A0A5),
@@ -340,7 +350,9 @@ class TaskTwo extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => TaskThree()),
+                        MaterialPageRoute(
+                            builder: (context) => TaskThree(dinero.text,
+                                cbu.text, destinatario, banco, alias)),
                       );
                     },
                     child: Text("Transferir"),
