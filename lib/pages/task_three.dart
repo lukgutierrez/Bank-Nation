@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:intl/date_symbol_data_local.dart';
 
 class TaskThree extends StatelessWidget {
-  final String destinatario;
-  final String banco;
-  final String alias;
-  final String cuit;
   final String dinero;
+  final String _destinatario;
+  final String _banco;
+  final String _alias;
+  final String _cuit;
+
   const TaskThree(
-      this.destinatario, this.alias, this.banco, this.cuit, this.dinero);
+      this.dinero, this._destinatario, this._cuit, this._banco, this._alias);
 
   @override
   Widget build(BuildContext context) {
@@ -159,7 +159,7 @@ class TaskThree extends StatelessWidget {
                                           color: Colors.transparent,
                                         ),
                                         Text(
-                                          destinatario,
+                                          _alias,
                                           style: TextStyle(
                                               fontSize: 60.0,
                                               fontWeight: FontWeight.w400,
@@ -172,19 +172,19 @@ class TaskThree extends StatelessWidget {
 
                                   Column(
                                     children: [
-                                      ListDate("Para ", banco, 1, 5),
+                                      ListDate("Para ", dinero, 1, 5),
                                       Divider(
                                         color: Colors.black38,
                                       ),
-                                      ListDate("CUIT ", destinatario, 1, 5),
+                                      ListDate("CUIT ", _banco, 1, 5),
                                       Divider(
                                         color: Colors.black38,
                                       ),
-                                      ListDate("Alias ", cuit, 1, 5),
+                                      ListDate("Alias ", _cuit, 1, 5),
                                       Divider(
                                         color: Colors.black38,
                                       ),
-                                      ListDate("Banco ", cuit, 2, 8),
+                                      ListDate("Banco ", _destinatario, 2, 8),
                                       Divider(
                                         color: Colors.black38,
                                       ),

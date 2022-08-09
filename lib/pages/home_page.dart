@@ -7,15 +7,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController destinatario = TextEditingController(text: "");
-  TextEditingController banco = TextEditingController(text: "");
-  TextEditingController cuit = TextEditingController(text: "");
-  TextEditingController alias = TextEditingController(text: "");
+  TextEditingController _destinatario = TextEditingController(text: "");
+  TextEditingController _banco = TextEditingController(text: "");
+  TextEditingController _cuit = TextEditingController(text: "");
+  TextEditingController _alias = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      backgroundColor: Colors.white,
+      body: ListView(
         children: [
           Container(
             height: 150.0,
@@ -41,7 +41,9 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   TextField(
-                    controller: destinatario,
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.characters,
+                    controller: _destinatario,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
@@ -51,7 +53,8 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w300, color: Colors.black)),
                   ),
                   TextField(
-                    controller: cuit,
+                    keyboardType: TextInputType.number,
+                    controller: _cuit,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
@@ -61,7 +64,9 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w300, color: Colors.black)),
                   ),
                   TextField(
-                    controller: banco,
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.characters,
+                    controller: _banco,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
@@ -71,7 +76,9 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w300, color: Colors.black)),
                   ),
                   TextField(
-                    controller: alias,
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.characters,
+                    controller: _alias,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
@@ -98,8 +105,8 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => TaskTwo(destinatario.text,
-                          cuit.text, alias.text, banco.text)),
+                      builder: (context) => TaskTwo(_destinatario.text,
+                          _alias.text, _banco.text, _cuit.text)),
                 );
               },
               child: Text("SIGUIENTE"),

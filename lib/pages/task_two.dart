@@ -2,13 +2,11 @@ import 'package:bank_nation/pages/task_three.dart';
 import 'package:flutter/material.dart';
 
 class TaskTwo extends StatelessWidget {
-  final String destinatario;
-  final String banco;
-  final String cuit;
-  final String alias;
-
-  const TaskTwo(this.destinatario, this.alias, this.banco, this.cuit);
-
+  final String _destinatario;
+  final String _banco;
+  final String _cuit;
+  final String _alias;
+  const TaskTwo(this._destinatario, this._banco, this._alias, this._cuit);
   @override
   Widget build(BuildContext context) {
     TextEditingController dinero = TextEditingController(text: "");
@@ -351,8 +349,13 @@ class TaskTwo extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => TaskThree(dinero.text,
-                                cbu.text, destinatario, banco, alias)),
+                            builder: (context) => TaskThree(
+                                  _destinatario,
+                                  _alias,
+                                  _banco,
+                                  _cuit,
+                                  dinero.text,
+                                )),
                       );
                     },
                     child: Text("Transferir"),
