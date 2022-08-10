@@ -53,57 +53,68 @@ class TaskTwo extends StatelessWidget {
                   child: Positioned(
                     left: 10.0,
                     bottom: -100,
-                    child: Container(
-                      color: Colors.white,
-                      width: 340.0,
-                      height: 190.0,
-                      child: Column(
-                        children: [
-                          Divider(
-                            height: 50,
-                            color: Colors.transparent,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: 340.0,
+                          height: 190.0,
+                          child:
+                              Image(image: AssetImage("assets/image/ADN.png")),
+                        ),
+                        Container(
+                          width: 340.0,
+                          height: 190.0,
+                          child: Column(
                             children: [
-                              Text(
-                                "Monto",
-                                style: TextStyle(
-                                    color: Color(0xFFF87A0A5), fontSize: 18),
+                              Divider(
+                                height: 50,
+                                color: Colors.transparent,
                               ),
-                              SizedBox(
-                                  width: 20.0,
-                                  height: 20.0,
-                                  child: Image(
-                                    image: AssetImage("assets/image/dolar.png"),
-                                    color: Color(0xFFF87A0A5),
-                                  )),
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextField(
-                                controller: dinero,
-                                keyboardType: TextInputType.number,
-                                cursorColor: Color(0xFFF39555),
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 50.0,
-                                    fontWeight: FontWeight.normal,
-                                    color: Color(0xFFF39555)),
-                                decoration: InputDecoration(
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Color(0xFFFA9A9A9)),
-                                    ),
-                                    hintText: "0,00",
-                                    hintStyle: TextStyle(
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Monto",
+                                    style: TextStyle(
+                                        color: Color(0xFFF87A0A5),
+                                        fontSize: 18),
+                                  ),
+                                  SizedBox(
+                                      width: 20.0,
+                                      height: 20.0,
+                                      child: Image(
+                                        image: AssetImage(
+                                            "assets/image/dolar.png"),
+                                        color: Color(0xFFF87A0A5),
+                                      )),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: TextField(
+                                    controller: dinero,
+                                    keyboardType: TextInputType.number,
+                                    cursorColor: Color(0xFFF39555),
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
                                         fontSize: 50.0,
                                         fontWeight: FontWeight.normal,
-                                        color: Color(0xFFF39555)))),
-                          )
-                        ],
-                      ),
+                                        color: Color(0xFFF39555)),
+                                    decoration: InputDecoration(
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Color(0xFFFA9A9A9)),
+                                        ),
+                                        hintText: "0,00",
+                                        hintStyle: TextStyle(
+                                            fontSize: 50.0,
+                                            fontWeight: FontWeight.normal,
+                                            color: Color(0xFFF39555)))),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

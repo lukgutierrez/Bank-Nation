@@ -124,49 +124,57 @@ class TaskThree extends StatelessWidget {
                                   ),
 
                                   //ETAPA N°2************************************************************
-                                  Container(
-                                    width: 340.0,
-                                    height: 190.0,
-                                    //color: Colors.yellow,
-                                    child: Column(
-                                      children: [
-                                        Divider(
-                                          height: 30,
-                                          color: Colors.transparent,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                  Stack(
+                                    children: [
+                                      Container(
+                                        width: 340.0,
+                                        height: 190.0,
+                                        child: Image(image: AssetImage("assets/image/ADN.png")),
+                                      ),
+                                      Container(
+                                        width: 340.0,
+                                        height: 190.0,
+                                        child: Column(
                                           children: [
-                                            Text(
-                                              "Monto",
-                                              style: TextStyle(
-                                                  color: Color(0xFFF32AFDF),
-                                                  fontSize: 20.0),
+                                            Divider(
+                                              height: 30,
+                                              color: Colors.transparent,
                                             ),
-                                            SizedBox(
-                                                width: 25.0,
-                                                height: 25.0,
-                                                child: Image(
-                                                  image: AssetImage(
-                                                      "assets/image/dolar.png"),
-                                                  color: Color(0xFFF0889BB),
-                                                )),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "Monto",
+                                                  style: TextStyle(
+                                                      color: Color(0xFFF32AFDF),
+                                                      fontSize: 20.0),
+                                                ),
+                                                SizedBox(
+                                                    width: 25.0,
+                                                    height: 25.0,
+                                                    child: Image(
+                                                      image: AssetImage(
+                                                          "assets/image/dolar.png"),
+                                                      color: Color(0xFFF0889BB),
+                                                    )),
+                                              ],
+                                            ),
+                                            Divider(
+                                              height: 30,
+                                              color: Colors.transparent,
+                                            ),
+                                            Text(
+                                              _alias,
+                                              style: TextStyle(
+                                                  fontSize: 60.0,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: Color(0xFFF39555)),
+                                            )
                                           ],
                                         ),
-                                        Divider(
-                                          height: 30,
-                                          color: Colors.transparent,
-                                        ),
-                                        Text(
-                                          _alias,
-                                          style: TextStyle(
-                                              fontSize: 60.0,
-                                              fontWeight: FontWeight.w400,
-                                              color: Color(0xFFF39555)),
-                                        )
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                   //ETAPA N° 3****************************************************************************************************
 
