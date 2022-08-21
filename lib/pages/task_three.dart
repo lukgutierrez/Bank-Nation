@@ -1,3 +1,4 @@
+import 'package:bank_nation/pages/voucher_digital.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -129,7 +130,9 @@ class TaskThree extends StatelessWidget {
                                       Container(
                                         width: 340.0,
                                         height: 190.0,
-                                        child: Image(image: AssetImage("assets/image/ADN.png")),
+                                        child: Image(
+                                            image: AssetImage(
+                                                "assets/image/ADN.png")),
                                       ),
                                       Container(
                                         width: 340.0,
@@ -240,7 +243,10 @@ class TaskThree extends StatelessWidget {
                             Image(image: AssetImage("assets/image/share.png")),
                       ),
                       onTap: () {
-                        
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ImagePage(Path,_destinatario)));
                       },
                     ),
                   ),

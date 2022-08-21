@@ -9,8 +9,9 @@ import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart';
 
 class ImagePage extends StatefulWidget {
+  final String destinatario;
   final path;
-  ImagePage(this.path);
+  ImagePage(this.path, this.destinatario);
 
   @override
   State<ImagePage> createState() => _ImagePageState();
@@ -56,8 +57,10 @@ class _ImagePageState extends State<ImagePage> {
           children: [
             RepaintBoundary(
                 key: _keyBoundary,
-                child:
-                    SizedBox(width: 500, height: 1280, child: VoucherDigital()))
+                child: SizedBox(
+                    width: 500,
+                    height: 1280,
+                    child: VoucherDigital(destinatario)))
           ],
         ));
   }
@@ -65,11 +68,10 @@ class _ImagePageState extends State<ImagePage> {
 
 class VoucherDigital extends StatelessWidget {
   // final String? dinero;
-  // final String? _destinatario;
+  final String destinatario;
   // final String? _banco;
   // final String? _cuit;
-  // const VoucherDigital(
-  //     this._destinatario, this._cuit, this.dinero, this._banco);
+  const VoucherDigital(this.destinatario);
 
   @override
   Widget build(BuildContext context) {
@@ -132,7 +134,7 @@ class VoucherDigital extends StatelessWidget {
                           height: 150,
                         ),
                         Text(
-                        "dssa",
+                          "dssa",
                           style: TextStyle(
                               color: Color(0xFFF46ADC2),
                               fontSize: 18,
@@ -143,7 +145,7 @@ class VoucherDigital extends StatelessWidget {
                   ],
                 ),
                 //CUIT
-                Date("ds"),
+                Date(destinatario),
                 //MONTO
                 Date("sas"),
                 //CBU/CVU
