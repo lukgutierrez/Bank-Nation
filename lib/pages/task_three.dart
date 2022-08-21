@@ -239,7 +239,9 @@ class TaskThree extends StatelessWidget {
                         child:
                             Image(image: AssetImage("assets/image/share.png")),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        
+                      },
                     ),
                   ),
                   //FIN BOTOM COMPARTIR COMPROBANTE********************************************************************************************************************************************************************************

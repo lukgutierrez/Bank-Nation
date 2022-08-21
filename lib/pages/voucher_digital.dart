@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:intl/intl.dart';
 import 'package:share_plus/share_plus.dart';
 
 import 'package:path_provider/path_provider.dart';
@@ -55,52 +56,107 @@ class _ImagePageState extends State<ImagePage> {
           children: [
             RepaintBoundary(
                 key: _keyBoundary,
-                child: SizedBox(
-                    width: 558.0, height: 1600.0, child: VoucherDigital()))
+                child:
+                    SizedBox(width: 500, height: 1280, child: VoucherDigital()))
           ],
         ));
   }
 }
 
 class VoucherDigital extends StatelessWidget {
-  const VoucherDigital({Key? key}) : super(key: key);
+  // final String? dinero;
+  // final String? _destinatario;
+  // final String? _banco;
+  // final String? _cuit;
+  // const VoucherDigital(
+  //     this._destinatario, this._cuit, this.dinero, this._banco);
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String FechaActual = DateFormat("dd/MM/yyyy HH:mm:ss", 'es_ES').format(now);
     return Scaffold(
-      body: ListView(
+      body: Column(
         children: [
           Container(
             height: 100.0,
             decoration: BoxDecoration(
               color: Color(0xFFF32AFDF),
               borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(25),
-                bottomLeft: Radius.circular(25),
+                bottomRight: Radius.circular(20),
+                bottomLeft: Radius.circular(20),
               ),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
+                    width: 50.0,
+                    height: 50.0,
                     child: Image(image: AssetImage("assets/image/money.png"))),
                 Text(
-                  "Transferir",
-                  style: TextStyle(color: Colors.white, fontSize: 18.0),
+                  "Transferido",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold),
                 )
               ],
             ),
           ),
           Stack(children: [
             Container(
-              child: Image(image: AssetImage("assets/image/payt.png")),
+              child: Image(image: AssetImage("assets/image/fondo.jpg")),
             ),
-            Center(
-              child: Container(
-                height: 300,
-                width: 200,
-                child: Image(image: AssetImage("assets/image/logo.png")),
-              ),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 100,
+                    ),
+                  ],
+                ),
+
+                //DESTINATARIO
+                Row(
+                  children: [
+                    Container(
+                      width: 33,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Divider(
+                          height: 150,
+                        ),
+                        Text(
+                        "dssa",
+                          style: TextStyle(
+                              color: Color(0xFFF46ADC2),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                //CUIT
+                Date("ds"),
+                //MONTO
+                Date("sas"),
+                //CBU/CVU
+                Date("eew"),
+                //BANCO
+                Date("holalal"),
+                //MOTIVO
+                Date("Varios"),
+                //N°TRANSFERENCIA
+                Date("03099750"),
+                //FECHAACTUAL
+                Date(FechaActual),
+              ],
             )
           ])
         ],
@@ -109,6 +165,30 @@ class VoucherDigital extends StatelessWidget {
   }
 }
 
+Date(dat) {
+  return Row(
+    children: [
+      Container(
+        width: 33,
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Divider(
+            height: 88,
+          ),
+          Text(
+            dat,
+            style: TextStyle(
+                color: Color(0xFFF46ADC2),
+                fontSize: 18,
+                fontWeight: FontWeight.w500),
+          ),
+        ],
+      ),
+    ],
+  );
+}
 
 //Dimesiones de la Imagen:
 //ancho : 558
