@@ -1,3 +1,4 @@
+import 'package:bank_nation/pages/test.dart';
 import 'package:bank_nation/pages/voucher_digital.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -246,7 +247,8 @@ class TaskThree extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ImagePage(Path,_destinatario)));
+                                builder: (context) => ImagePage(
+                                    _cuit, _banco, _destinatario, Path)));
                       },
                     ),
                   ),

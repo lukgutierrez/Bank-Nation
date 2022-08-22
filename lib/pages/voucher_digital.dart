@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
+import 'package:bank_nation/pages/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
@@ -9,9 +10,12 @@ import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart';
 
 class ImagePage extends StatefulWidget {
-  final String destinatario;
+  final String _destinatario;
+  final String _banco;
+  final String _cuit;
+
   final path;
-  ImagePage(this.path, this.destinatario);
+  ImagePage(this._destinatario, this._cuit, this._banco, this.path);
 
   @override
   State<ImagePage> createState() => _ImagePageState();
@@ -60,138 +64,9 @@ class _ImagePageState extends State<ImagePage> {
                 child: SizedBox(
                     width: 500,
                     height: 1280,
-                    child: VoucherDigital(destinatario)))
+                    child: VoucherDigital(
+                        widget._banco, widget._destinatario, widget._cuit)))
           ],
         ));
   }
 }
-
-class VoucherDigital extends StatelessWidget {
-  // final String? dinero;
-  final String destinatario;
-  // final String? _banco;
-  // final String? _cuit;
-  const VoucherDigital(this.destinatario);
-
-  @override
-  Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
-    String FechaActual = DateFormat("dd/MM/yyyy HH:mm:ss", 'es_ES').format(now);
-    return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 100.0,
-            decoration: BoxDecoration(
-              color: Color(0xFFF32AFDF),
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(20),
-                bottomLeft: Radius.circular(20),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: Image(image: AssetImage("assets/image/money.png"))),
-                Text(
-                  "Transferido",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
-            ),
-          ),
-          Stack(children: [
-            Container(
-              child: Image(image: AssetImage("assets/image/fondo.jpg")),
-            ),
-            Column(
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                    ),
-                  ],
-                ),
-
-                //DESTINATARIO
-                Row(
-                  children: [
-                    Container(
-                      width: 33,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Divider(
-                          height: 150,
-                        ),
-                        Text(
-                          "dssa",
-                          style: TextStyle(
-                              color: Color(0xFFF46ADC2),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                //CUIT
-                Date(destinatario),
-                //MONTO
-                Date("sas"),
-                //CBU/CVU
-                Date("eew"),
-                //BANCO
-                Date("holalal"),
-                //MOTIVO
-                Date("Varios"),
-                //N°TRANSFERENCIA
-                Date("03099750"),
-                //FECHAACTUAL
-                Date(FechaActual),
-              ],
-            )
-          ])
-        ],
-      ),
-    );
-  }
-}
-
-Date(dat) {
-  return Row(
-    children: [
-      Container(
-        width: 33,
-      ),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Divider(
-            height: 88,
-          ),
-          Text(
-            dat,
-            style: TextStyle(
-                color: Color(0xFFF46ADC2),
-                fontSize: 18,
-                fontWeight: FontWeight.w500),
-          ),
-        ],
-      ),
-    ],
-  );
-}
-
-//Dimesiones de la Imagen:
-//ancho : 558
-//alto: 1600
