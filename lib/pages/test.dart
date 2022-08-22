@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class VoucherDigital extends StatelessWidget {
-  // final String? dinero;
+  final String cbu;
+  final String dinero;
   final String _destinatario;
   final String _banco;
   final String _cuit;
-  const VoucherDigital(this._destinatario, this._cuit, this._banco);
+  const VoucherDigital(
+      this._destinatario, this._cuit, this.dinero, this.cbu, this._banco);
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,7 @@ class VoucherDigital extends StatelessWidget {
                           height: 150,
                         ),
                         Text(
-                          _cuit,
+                          _destinatario,
                           style: TextStyle(
                               color: Color(0xFFF46ADC2),
                               fontSize: 18,
@@ -83,11 +85,11 @@ class VoucherDigital extends StatelessWidget {
                 //CUIT
                 Date(_cuit),
                 //MONTO
-                Date(_cuit),
+                Date(dinero),
                 //CBU/CVU
-                Date(_cuit),
+                Date(cbu),
                 //BANCO
-                Date(_cuit),
+                Date(_banco),
                 //MOTIVO
                 Date("Varios"),
                 //N°TRANSFERENCIA

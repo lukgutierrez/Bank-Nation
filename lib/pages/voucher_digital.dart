@@ -13,9 +13,12 @@ class ImagePage extends StatefulWidget {
   final String _destinatario;
   final String _banco;
   final String _cuit;
+  final String dinero;
+  final String cbu;
 
   final path;
-  ImagePage(this._destinatario, this._cuit, this._banco, this.path);
+  ImagePage(this._destinatario, this._cuit, this._banco, this.path, this.dinero,
+      this.cbu);
 
   @override
   State<ImagePage> createState() => _ImagePageState();
@@ -64,8 +67,8 @@ class _ImagePageState extends State<ImagePage> {
                 child: SizedBox(
                     width: 500,
                     height: 1280,
-                    child: VoucherDigital(
-                        widget._banco, widget._destinatario, widget._cuit)))
+                    child: VoucherDigital(widget._banco, widget._destinatario,
+                        widget._cuit, widget.dinero, widget.cbu)))
           ],
         ));
   }

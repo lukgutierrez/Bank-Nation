@@ -366,6 +366,7 @@ class TaskTwo extends StatelessWidget {
                                   _banco,
                                   _cuit,
                                   dinero.text,
+                                  cbu.text,
                                 )),
                       );
                     },

@@ -9,9 +9,10 @@ class TaskThree extends StatelessWidget {
   final String _banco;
   final String _alias;
   final String _cuit;
+  final String cbu;
 
-  const TaskThree(
-      this.dinero, this._destinatario, this._cuit, this._banco, this._alias);
+  const TaskThree(this.dinero, this._destinatario, this._cuit, this._banco,
+      this._alias, this.cbu);
 
   @override
   Widget build(BuildContext context) {
@@ -247,8 +248,8 @@ class TaskThree extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ImagePage(
-                                    _cuit, _banco, _destinatario, Path)));
+                                builder: (context) => ImagePage(cbu, dinero,
+                                    _cuit, _banco, _destinatario, "")));
                       },
                     ),
                   ),
