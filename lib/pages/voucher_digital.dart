@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
-import 'package:bank_nation/pages/test.dart';
+import 'package:bank_nation/pages/Image_generate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:share_plus/share_plus.dart';
@@ -68,6 +68,7 @@ class _ImagePageState extends State<ImagePage> {
           children: [
             RepaintBoundary(
                 key: _keyBoundary,
+                //CAMBIAR TAMAÑO DE LA IMAGEN***************************************************
                 child: SizedBox(
                     width: 500,
                     height: 1280,

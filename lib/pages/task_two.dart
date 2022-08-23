@@ -190,7 +190,7 @@ class TaskTwo extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
-                            Text(r"$ 843.600,00",
+                            Text(r"$ 959.600,00",
                                 style: TextStyle(
                                     color: Color(0xFFF87A0A5),
                                     fontSize: 25.0,
@@ -219,7 +219,7 @@ class TaskTwo extends StatelessWidget {
             height: 30,
             color: Colors.transparent,
           ),
-          //DESTINATARIO
+          //DESTINATARIO****************************************************************************
 
           Column(
             children: [
@@ -342,6 +342,7 @@ class TaskTwo extends StatelessWidget {
                   ),
                 ),
               ),
+              //BOTON***************************************************************************************
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: SizedBox(
