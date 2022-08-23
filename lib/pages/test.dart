@@ -8,8 +8,9 @@ class VoucherDigital extends StatelessWidget {
   final String _destinatario;
   final String _banco;
   final String _cuit;
-  const VoucherDigital(
-      this._destinatario, this._cuit, this.dinero, this.cbu, this._banco);
+  final String _alias;
+  const VoucherDigital(this._destinatario, this._cuit, this.dinero, this.cbu,
+      this._banco, this._alias);
 
   @override
   Widget build(BuildContext context) {
@@ -83,11 +84,11 @@ class VoucherDigital extends StatelessWidget {
                   ],
                 ),
                 //CUIT
-                Date(_cuit),
-                //MONTO
-                Date(dinero),
-                //CBU/CVU
                 Date(cbu),
+                //MONTO
+                Date(_cuit),
+                //CBU/CVU
+                Date(dinero),
                 //BANCO
                 Date(_banco),
                 //MOTIVO

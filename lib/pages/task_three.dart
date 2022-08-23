@@ -248,8 +248,8 @@ class TaskThree extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ImagePage(cbu, dinero,
-                                    _cuit, _banco, _destinatario, "")));
+                                builder: (context) => ImagePage(_alias, cbu,
+                                    dinero, _cuit, _banco, _destinatario, "")));
                       },
                     ),
                   ),

@@ -11,6 +11,7 @@ import 'package:path_provider/path_provider.dart';
 
 class ImagePage extends StatefulWidget {
   final String _destinatario;
+  final String _alias;
   final String _banco;
   final String _cuit;
   final String dinero;
@@ -18,7 +19,7 @@ class ImagePage extends StatefulWidget {
 
   final path;
   ImagePage(this._destinatario, this._cuit, this._banco, this.path, this.dinero,
-      this.cbu);
+      this.cbu, this._alias);
 
   @override
   State<ImagePage> createState() => _ImagePageState();
@@ -67,8 +68,13 @@ class _ImagePageState extends State<ImagePage> {
                 child: SizedBox(
                     width: 500,
                     height: 1280,
-                    child: VoucherDigital(widget._banco, widget._destinatario,
-                        widget._cuit, widget.dinero, widget.cbu)))
+                    child: VoucherDigital(
+                        widget._banco,
+                        widget._destinatario,
+                        widget._cuit,
+                        widget.dinero,
+                        widget.cbu,
+                        widget._alias)))
           ],
         ));
   }
