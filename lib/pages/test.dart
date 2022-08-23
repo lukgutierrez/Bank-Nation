@@ -86,7 +86,41 @@ class VoucherDigital extends StatelessWidget {
                 //CUIT
                 Date(cbu),
                 //MONTO
-                Date(_cuit),
+                Row(
+                  children: [
+                    Container(
+                      width: 33.0,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Divider(
+                          height: 88,
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              height: 15,
+                              width: 15,
+                              child: Image(
+                                image: AssetImage("assets/image/dolar.png"),
+                                color: Color(0xFFF46ADC2),
+                              ),
+                            ),
+                            Text(
+                              _cuit,
+                              style: TextStyle(
+                                  color: Color(0xFFF46ADC2),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+
                 //CBU/CVU
                 Date(dinero),
                 //BANCO

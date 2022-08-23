@@ -4,9 +4,7 @@ import 'dart:ui' as ui;
 import 'package:bank_nation/pages/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:intl/intl.dart';
 import 'package:share_plus/share_plus.dart';
-
 import 'package:path_provider/path_provider.dart';
 
 class ImagePage extends StatefulWidget {
@@ -34,7 +32,7 @@ class _ImagePageState extends State<ImagePage> {
     final boundary =
         currentContext!.findRenderObject() as RenderRepaintBoundary?;
     final image = await boundary!.toImage(
-      pixelRatio: 5.0,
+      pixelRatio: 100.0,
     );
     final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
 
@@ -54,12 +52,17 @@ class _ImagePageState extends State<ImagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: GestureDetector(
-              onTap: () async {
-                var path = await generateImage();
-                Share.shareFiles([path]);
-              },
-              child: Icon(Icons.abc)),
+          backgroundColor: ui.Color(0xFFF32AFDF),
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          title: Center(
+            child: GestureDetector(
+                onTap: () async {
+                  var path = await generateImage();
+                  Share.shareFiles([path]);
+                },
+                child: Icon(Icons.share)),
+          ),
         ),
         body: ListView(
           children: [

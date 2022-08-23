@@ -1,4 +1,3 @@
-import 'package:bank_nation/pages/test.dart';
 import 'package:bank_nation/pages/voucher_digital.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -201,7 +200,7 @@ class TaskThree extends StatelessWidget {
                                       Divider(
                                         color: Colors.black38,
                                       ),
-                                      ListDate("Motivo ", "", 4, 4),
+                                      ListDate("Motivo ", "VARIOS", 1, 4),
                                       Divider(
                                         color: Colors.black38,
                                       ),
