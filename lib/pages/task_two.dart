@@ -21,12 +21,12 @@ class TaskTwo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                width: 30.0,
-                height: 30.0,
+                width: 35.0,
+                height: 35.0,
                 child: Image(image: AssetImage("assets/image/money.png"))),
             Text(
               "Transferir",
-              style: TextStyle(color: Colors.white, fontSize: 15.0),
+              style: TextStyle(color: Colors.white, fontSize: 20.0),
             )
           ],
         ),
@@ -76,7 +76,8 @@ class TaskTwo extends StatelessWidget {
                                   Text(
                                     "Monto",
                                     style: TextStyle(
-                                        color: Color(0xFFF87A0A5),
+                                        color: Color(0xFFF0C7287),
+                                        fontWeight: FontWeight.w400,
                                         fontSize: 18),
                                   ),
                                   SizedBox(
@@ -85,7 +86,7 @@ class TaskTwo extends StatelessWidget {
                                       child: Image(
                                         image: AssetImage(
                                             "assets/image/dolar.png"),
-                                        color: Color(0xFFF87A0A5),
+                                        color: Color(0xFFF0C7287),
                                       )),
                                 ],
                               ),
@@ -136,9 +137,9 @@ class TaskTwo extends StatelessWidget {
                   child: Text(
                     "Cuenta origen",
                     style: TextStyle(
-                        color: Color(0xFFF87A0A5),
+                        color: Color(0xFFF0C7287),
                         fontSize: 18.0,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.w300),
                   ),
                 ),
                 Container(
@@ -179,9 +180,9 @@ class TaskTwo extends StatelessWidget {
                             Text(
                               r"CA $****96472",
                               style: TextStyle(
-                                  color: Color(0xFFF87A0A5),
+                                  color: Color(0xFFF0C7287),
                                   fontSize: 18.0,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w400),
                             )
                           ],
                         ),
@@ -192,9 +193,9 @@ class TaskTwo extends StatelessWidget {
                           children: [
                             Text(r"$ 959.600,00",
                                 style: TextStyle(
-                                    color: Color(0xFFF87A0A5),
+                                    color: Color(0xFFF0C7287),
                                     fontSize: 25.0,
-                                    fontWeight: FontWeight.w500)),
+                                    fontWeight: FontWeight.w400)),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: SizedBox(
@@ -228,7 +229,7 @@ class TaskTwo extends StatelessWidget {
                 child: Text(
                   "Destinatario",
                   style: TextStyle(
-                      color: Color(0xFFF87A0A5),
+                      color: Color(0xFFF0C7287),
                       fontSize: 18.0,
                       fontWeight: FontWeight.w400),
                 ),
@@ -325,8 +326,8 @@ class TaskTwo extends StatelessWidget {
                           controller: cbu,
                           keyboardType: TextInputType.number,
                           style: TextStyle(
-                              color: Color(0xFFF87A0A5),
-                              fontWeight: FontWeight.w500),
+                              color: Color(0xFFF0C7287),
+                              fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
                               focusedBorder: UnderlineInputBorder(
                                 borderSide:

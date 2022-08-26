@@ -75,9 +75,9 @@ class VoucherDigital extends StatelessWidget {
                         Text(
                           _destinatario,
                           style: TextStyle(
-                              color: Color(0xFFF46ADC2),
+                              color: Color(0xFFF0C7287),
                               fontSize: 18,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w400),
                         ),
                       ],
                     ),
@@ -104,15 +104,15 @@ class VoucherDigital extends StatelessWidget {
                               width: 15,
                               child: Image(
                                 image: AssetImage("assets/image/dolar.png"),
-                                color: Color(0xFFF46ADC2),
+                                color: Color(0xFFF0C7287),
                               ),
                             ),
                             Text(
                               _cuit,
                               style: TextStyle(
-                                  color: Color(0xFFF46ADC2),
+                                  color: Color(0xFFF0C7287),
                                   fontSize: 18,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.w400),
                             ),
                           ],
                         ),
@@ -155,9 +155,9 @@ Date(dat) {
           Text(
             dat,
             style: TextStyle(
-                color: Color(0xFFF46ADC2),
+                color: Color(0xFFF0C7287),
                 fontSize: 18,
-                fontWeight: FontWeight.w500),
+                fontWeight: FontWeight.w400),
           ),
         ],
       ),
