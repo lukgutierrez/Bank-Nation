@@ -1,3 +1,4 @@
+import 'package:bank_nation/models/Activity_Bank.dart';
 import 'package:bank_nation/pages/voucher_digital.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -304,7 +305,19 @@ class TaskThree extends StatelessWidget {
                                   RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50.0),
                               ))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ActivityBank(
+                                          _alias,
+                                          cbu,
+                                          dinero,
+                                          _cuit,
+                                          _banco,
+                                          _destinatario,
+                                        )));
+                          },
                           child: Text(
                             "Otra Transferencia",
                             style: TextStyle(fontSize: 17.0),

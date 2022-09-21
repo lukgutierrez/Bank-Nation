@@ -128,7 +128,7 @@ class VoucherDigital extends StatelessWidget {
                 //MOTIVO
                 Date("Varios"),
                 //N°TRANSFERENCIA
-                Date("03099750"),
+                Date("04599750"),
                 //FECHAACTUAL
                 Date(FechaActual),
               ],
