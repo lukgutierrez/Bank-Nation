@@ -10,6 +10,7 @@ class ActivityBank extends StatelessWidget {
     String FechaActual = DateFormat("dd/MM/yyyy HH:mm:ss", 'es_ES').format(now);
     return Scaffold(
       appBar: AppBar(
+        leading: null,
         backgroundColor: Color(0xFFF32AFDF),
         elevation: 0,
         automaticallyImplyLeading: false,
@@ -90,35 +91,57 @@ class ActivityBank extends StatelessWidget {
               color: Color(0xFFF979797),
             ),
           ),
-          Lista("Trasferencia CARLOS...", "S 9.000", "23/09/2022"),
+          Lista("Trasferencia a HECTOR..", r"$ 6.500", "16/09/2022 21:10:16"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista("Trasferencia CARLOS...", "S 9.000", "23/09/2022"),
+          Lista("Trasferencia a MICAELA...", r"$ 9.580", "08/09/2022 20:10:16"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista("Trasferencia CARLOS...", "S 9.000", "23/09/2022"),
+          Lista("Trasferencia a DULCE...", r"$ 21.000", "30/08/2022 11:20:10"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista("Trasferencia CARLOS...", "S 9.000", "23/09/2022"),
+          Lista("Trasferencia a CARNIC...", r"$ 5.000", "21/08/2022 15:50:10"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista("Trasferencia PABLO...", "S 9.000", "10/08/2022 10:20:40"),
+          Lista("Trasferencia a PABLO...", r"$ 18.500", "10/08/2022 17:40:50"),
+          Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Divider(
+                height: 1,
+                color: Color(0xFFF979797),
+              )),
+          Lista("Trasferencia a COMUNICACIO...", r"$ 18.500",
+              "10/08/2022 18:60:40"),
+          Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Divider(
+                height: 1,
+                color: Color(0xFFF979797),
+              )),
+          Lista("Trasferencia a ROCIO...", r"$ 18.500", "05/08/2022 16:40:30"),
+          Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Divider(
+                height: 1,
+                color: Color(0xFFF979797),
+              )),
+          Lista("Trasferencia a CARLOS...", r"$ 18.500", "01/08/2022 07:10:50"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
