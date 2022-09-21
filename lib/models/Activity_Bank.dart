@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ActivityBank extends StatelessWidget {
   const ActivityBank({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String FechaActual = DateFormat("dd/MM/yyyy HH:mm:ss", 'es_ES').format(now);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFF32AFDF),
@@ -50,29 +53,105 @@ class ActivityBank extends StatelessWidget {
                       offset: Offset(0.0, 0.0))
                 ],
                 color: Colors.white),
-            child: Image(image: AssetImage("assets/image/logo2.png")),
+            child: Image(image: AssetImage("assets/image/page.png")),
           ),
           //******************************************************************************************************+ */
           ListTile(
-            title: Text(
-              "Trasferencia a JUAN...",
-              style: TextStyle(
-                  fontSize: 15,
-                  color: Color(0xFFF0C7287),
-                  fontWeight: FontWeight.bold),
+            title: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Trasferencia a JUAN...",
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Color(0xFFF0C7287),
+                    fontWeight: FontWeight.w500),
+              ),
             ),
-            subtitle: Text("fnso"),
+            subtitle: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(FechaActual),
+            ),
             leading: Image(image: AssetImage("assets/image/logo2.png")),
-            trailing: Text(
-              "fosdfnods",
-              style: TextStyle(
-                  fontSize: 15,
-                  color: Color(0xFFF0C7287),
-                  fontWeight: FontWeight.bold),
+            trailing: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "S 2.5000",
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Color(0xFFF979797),
+                    fontWeight: FontWeight.w700),
+              ),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Divider(
+              height: 1,
+              color: Color(0xFFF979797),
+            ),
+          ),
+          Lista("Trasferencia CARLOS...", "S 9.000", "23/09/2022"),
+          Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Divider(
+                height: 1,
+                color: Color(0xFFF979797),
+              )),
+          Lista("Trasferencia CARLOS...", "S 9.000", "23/09/2022"),
+          Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Divider(
+                height: 1,
+                color: Color(0xFFF979797),
+              )),
+          Lista("Trasferencia CARLOS...", "S 9.000", "23/09/2022"),
+          Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Divider(
+                height: 1,
+                color: Color(0xFFF979797),
+              )),
+          Lista("Trasferencia CARLOS...", "S 9.000", "23/09/2022"),
+          Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Divider(
+                height: 1,
+                color: Color(0xFFF979797),
+              )),
+          Lista("Trasferencia PABLO...", "S 9.000", "10/08/2022 10:20:40"),
+          Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Divider(
+                height: 1,
+                color: Color(0xFFF979797),
+              )),
         ],
       ),
     );
   }
+}
+
+Lista(people, montotrs, fecha) {
+  return ListTile(
+    title: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        people,
+        style: TextStyle(
+            fontSize: 18,
+            color: Color(0xFFF0C7287),
+            fontWeight: FontWeight.w500),
+      ),
+    ),
+    subtitle: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(fecha),
+    ),
+    leading: Image(image: AssetImage("assets/image/logo2.png")),
+    trailing: Text(
+      montotrs,
+      style: TextStyle(
+          fontSize: 18, color: Color(0xFFF979797), fontWeight: FontWeight.w700),
+    ),
+  );
 }
