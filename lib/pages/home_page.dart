@@ -11,6 +11,7 @@ class _HomePageState extends State<HomePage> {
   TextEditingController _banco = TextEditingController(text: "");
   TextEditingController _cuit = TextEditingController(text: "");
   TextEditingController _alias = TextEditingController(text: "");
+  TextEditingController _numtrancion = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -101,6 +102,22 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(50),
                         ),
                         hintText: "Alias:",
+                        hintStyle: TextStyle(
+                            fontWeight: FontWeight.w300, color: Colors.black)),
+                  ),
+                  Divider(
+                    height: 100,
+                    color: Colors.transparent,
+                  ),
+                  TextField(
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.characters,
+                    controller: _alias,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        hintText: "N°Transacción:",
                         hintStyle: TextStyle(
                             fontWeight: FontWeight.w300, color: Colors.black)),
                   ),
