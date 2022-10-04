@@ -14,10 +14,11 @@ class ImagePage extends StatefulWidget {
   final String _cuit;
   final String dinero;
   final String cbu;
+  final String _numtrancion;
 
   final path;
   ImagePage(this._destinatario, this._cuit, this._banco, this.path, this.dinero,
-      this.cbu, this._alias);
+      this.cbu, this._alias, this._numtrancion);
 
   @override
   State<ImagePage> createState() => _ImagePageState();
@@ -78,7 +79,8 @@ class _ImagePageState extends State<ImagePage> {
                         widget._cuit,
                         widget.dinero,
                         widget.cbu,
-                        widget._alias)))
+                        widget._alias,
+                        widget._numtrancion)))
           ],
         ));
   }

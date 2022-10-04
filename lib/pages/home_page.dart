@@ -106,23 +106,23 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w300, color: Colors.black)),
                   ),
                   Divider(
-                    height: 100,
+                    height: 50,
                     color: Colors.transparent,
                   ),
                   TextField(
-                    keyboardType: TextInputType.text,
+                    keyboardType: TextInputType.number,
                     textCapitalization: TextCapitalization.characters,
-                    controller: _alias,
+                    controller: _numtrancion,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
                         ),
-                        hintText: "N°Transacción:",
+                        hintText: "N° Transacción:",
                         hintStyle: TextStyle(
                             fontWeight: FontWeight.w300, color: Colors.black)),
                   ),
                   Divider(
-                    height: 100,
+                    height: 50,
                     color: Colors.transparent,
                   ),
                 ],
@@ -146,8 +146,12 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => TaskTwo(_destinatario.text,
-                              _alias.text, _banco.text, _cuit.text)),
+                          builder: (context) => TaskTwo(
+                              _destinatario.text,
+                              _alias.text,
+                              _banco.text,
+                              _cuit.text,
+                              _numtrancion.text)),
                     );
                   },
                   child: Text("SIGUIENTE"),

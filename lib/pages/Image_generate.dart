@@ -4,13 +4,14 @@ import 'package:intl/intl.dart';
 
 class VoucherDigital extends StatelessWidget {
   final String cbu;
+  final String _numtrancion;
   final String dinero;
   final String _destinatario;
   final String _banco;
   final String _cuit;
   final String _alias;
   const VoucherDigital(this._destinatario, this._cuit, this.dinero, this.cbu,
-      this._banco, this._alias);
+      this._banco, this._alias, this._numtrancion);
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +129,7 @@ class VoucherDigital extends StatelessWidget {
                 //MOTIVO
                 Date("Varios"),
                 //N°TRANSFERENCIA
-                Date("04599750"),
+                Date(_alias),
                 //FECHAACTUAL
                 Date(FechaActual),
               ],

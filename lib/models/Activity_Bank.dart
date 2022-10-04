@@ -8,11 +8,13 @@ class ActivityBank extends StatelessWidget {
   final String _banco;
   final String _cuit;
   final String _alias;
+
   const ActivityBank(this._destinatario, this._cuit, this.dinero, this.cbu,
       this._banco, this._alias);
 
   @override
   Widget build(BuildContext context) {
+    String pdf = r"$";
     DateTime now = DateTime.now();
     String FechaActual = DateFormat("dd/MM/yyyy HH:mm:ss", 'es_ES').format(now);
     return Scaffold(
@@ -83,7 +85,7 @@ class ActivityBank extends StatelessWidget {
             trailing: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "S $_destinatario",
+                "$pdf $_destinatario",
                 style: TextStyle(
                     fontSize: 18,
                     color: Color(0xFFF979797),
@@ -98,47 +100,47 @@ class ActivityBank extends StatelessWidget {
               color: Color(0xFFF979797),
             ),
           ),
-          Lista(
-              "Trasferencia a HECTOR..", r"$ 6.500,00", "16/09/2022 21:10:16"),
+          Lista("Trasferencia a FERRETERIA SAN MIGUEL...", r"$ 18.500,00",
+              "02/10/2022 11:10:16"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista("Trasferencia a MICAELA...", r"$ 9.580,00",
-              "08/09/2022 20:10:16"),
+          Lista("Trasferencia a MUEBLERIA LUNAY...", r"$ 35.580,00",
+              "29/09/2022 20:10:16"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista(
-              "Trasferencia a DULCE...", r"$ 21.000,00", "30/08/2022 11:20:10"),
+          Lista("Trasferencia a CARNICERIA SAN FRANCISCO...", r"$ 20.000,00",
+              "18/09/2022 11:20:10"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista(
-              "Trasferencia a CARNIC...", r"$ 5.000,00", "21/08/2022 15:50:10"),
+          Lista("Trasferencia a RESPUESTERA MOTOR BIKE...", r"$ 9.000,00",
+              "15/09/2022 15:50:10"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista(
-              "Trasferencia a PABLO...", r"$ 18.500,00", "10/08/2022 17:40:50"),
+          Lista("Trasferencia a PABLO RODRIGUEZ...", r"$ 18.500,00",
+              "10/09/2022 17:40:50"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista("Trasferencia a COMUNICACIO...", r"$ 18.500,00",
+          Lista("Trasferencia a COMUNICACIONES LERMA...", r"$ 2.500,00",
               "10/08/2022 18:60:40"),
           Padding(
               padding: const EdgeInsets.all(15.0),
@@ -146,15 +148,15 @@ class ActivityBank extends StatelessWidget {
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista(
-              "Trasferencia a ROCIO...", r"$ 18.500,00", "05/08/2022 16:40:30"),
+          Lista("Trasferencia a ROCIO LIENDRO...", r"$ 11.500,00",
+              "05/08/2022 16:40:30"),
           Padding(
               padding: const EdgeInsets.all(15.0),
               child: Divider(
                 height: 1,
                 color: Color(0xFFF979797),
               )),
-          Lista("Trasferencia a CARLOS...", r"$ 18.500,00",
+          Lista("Trasferencia a CARLOS MADERO...", r"$ 30.500,00",
               "01/08/2022 07:10:50"),
           Padding(
               padding: const EdgeInsets.all(15.0),

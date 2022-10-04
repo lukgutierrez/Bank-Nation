@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 
 class TaskThree extends StatelessWidget {
   final String dinero;
+  final String _numtrancion;
   final String _destinatario;
   final String _banco;
   final String _alias;
@@ -12,7 +13,7 @@ class TaskThree extends StatelessWidget {
   final String cbu;
 
   const TaskThree(this.dinero, this._destinatario, this._cuit, this._banco,
-      this._alias, this.cbu);
+      this._alias, this.cbu, this._numtrancion);
 
   @override
   Widget build(BuildContext context) {
@@ -248,8 +249,15 @@ class TaskThree extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ImagePage(_alias, cbu,
-                                    dinero, _cuit, _banco, _destinatario, "")));
+                                builder: (context) => ImagePage(
+                                    _alias,
+                                    cbu,
+                                    dinero,
+                                    _cuit,
+                                    _banco,
+                                    _destinatario,
+                                    _numtrancion,
+                                    "")));
                       },
                     ),
                   ),
