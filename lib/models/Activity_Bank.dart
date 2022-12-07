@@ -1,7 +1,9 @@
+import 'package:bank_nation/database/datamoney.dart';
+import 'package:bank_nation/database/page/hive_data.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ActivityBank extends StatelessWidget {
+class ActivityBank extends StatefulWidget {
   final String cbu;
   final String dinero;
   final String _destinatario;
@@ -13,12 +15,41 @@ class ActivityBank extends StatelessWidget {
       this._banco, this._alias);
 
   @override
+  State<ActivityBank> createState() => _ActivityBankState();
+}
+
+class _ActivityBankState extends State<ActivityBank> {
+  final HiveData hiveData = const HiveData();
+  List<DataMoney> datamoney = [];
+
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
+
+  Future<void> getData() async {
+    datamoney = await hiveData.contact;
+
+    setState(() {});
+  }
+  @override
   Widget build(BuildContext context) {
     String pdf = r"$";
     DateTime now = DateTime.now();
     String FechaActual = DateFormat("dd/MM/yyyy HH:mm:ss", 'es_ES').format(now);
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () async {
+                      await hiveData.saveDataMoney(DataMoney(
+                          nametitular: widget._destinatario,
+                          dineromenos: widget.dinero,
+                          saldoactual: widget._alias,
+                          fecha: FechaActual));
+                      await getData();
+                    },
+                    icon: Icon(Icons.more_vert))],
         leading: Icon(Icons.arrow_back),
         backgroundColor: Color(0xFFF32AFDF),
         elevation: 0,
@@ -37,40 +68,27 @@ class ActivityBank extends StatelessWidget {
           ],
         ),
       ),
-      body: ListView(
-        children: [
-          Container(
-              height: 30.0,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Color(0xFFF32AFDF),
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(25),
-                  bottomLeft: Radius.circular(25),
-                ),
-              )),
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(0),
-                    bottomLeft: Radius.circular(0),
-                    topLeft: Radius.circular(0),
-                    topRight: Radius.circular(0)),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 5.0,
-                      offset: Offset(0.0, 0.0))
-                ],
-                color: Colors.white),
-            child: Image(image: AssetImage("assets/image/page.png")),
-          ),
-          //******************************************************************************************************+ */
-          ListTile(
+      body: ListView.builder(
+        reverse: true,
+        itemCount: datamoney.length,
+        itemBuilder: (context, index) => Dismissible(
+           background: Container(
+                            color: Color(0xFFF32AFDF),
+                            child: Center(
+                                child: Text(
+                              "DELETE",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                              ),
+                            )),
+                          ),
+          key:UniqueKey(),
+          child:ListTile(
             title: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Transferencia a $dinero...",
+                  "Transferencia a ${datamoney[index].dineromenos}...",
                 style: TextStyle(
                     fontSize: 18,
                     color: Color(0xFFF0C7287),
@@ -79,13 +97,13 @@ class ActivityBank extends StatelessWidget {
             ),
             subtitle: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(FechaActual),
+              child: Text(datamoney[index].fecha),
             ),
             leading: Image(image: AssetImage("assets/image/logo2.png")),
             trailing: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "$pdf $_destinatario",
+                 "$pdf ${datamoney[index].nametitular}",
                 style: TextStyle(
                     fontSize: 18,
                     color: Color(0xFFF979797),
@@ -93,104 +111,82 @@ class ActivityBank extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Divider(
-              height: 1,
-              color: Color(0xFFF979797),
-            ),
-          ),
-          Lista("Trasferencia a FERRETERIA SAN MIGUEL...", r"$ 18.500,00",
-              "02/10/2022 11:10:16"),
-          Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Divider(
-                height: 1,
-                color: Color(0xFFF979797),
-              )),
-          Lista("Trasferencia a MUEBLERIA LUNAY...", r"$ 35.580,00",
-              "29/09/2022 20:10:16"),
-          Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Divider(
-                height: 1,
-                color: Color(0xFFF979797),
-              )),
-          Lista("Trasferencia a CARNICERIA SAN FRANCISCO...", r"$ 20.000,00",
-              "18/09/2022 11:20:10"),
-          Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Divider(
-                height: 1,
-                color: Color(0xFFF979797),
-              )),
-          Lista("Trasferencia a RESPUESTERA MOTOR BIKE...", r"$ 9.000,00",
-              "15/09/2022 15:50:10"),
-          Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Divider(
-                height: 1,
-                color: Color(0xFFF979797),
-              )),
-          Lista("Trasferencia a PABLO RODRIGUEZ...", r"$ 18.500,00",
-              "10/09/2022 17:40:50"),
-          Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Divider(
-                height: 1,
-                color: Color(0xFFF979797),
-              )),
-          Lista("Trasferencia a COMUNICACIONES LERMA...", r"$ 2.500,00",
-              "10/08/2022 18:60:40"),
-          Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Divider(
-                height: 1,
-                color: Color(0xFFF979797),
-              )),
-          Lista("Trasferencia a ROCIO LIENDRO...", r"$ 11.500,00",
-              "05/08/2022 16:40:30"),
-          Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Divider(
-                height: 1,
-                color: Color(0xFFF979797),
-              )),
-          Lista("Trasferencia a CARLOS MADERO...", r"$ 30.500,00",
-              "01/08/2022 07:10:50"),
-          Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Divider(
-                height: 1,
-                color: Color(0xFFF979797),
-              )),
-        ],
+          
+        // children: [
+        //   Container(
+        //       height: 30.0,
+        //       width: double.infinity,
+        //       decoration: BoxDecoration(
+        //         color: Color(0xFFF32AFDF),
+        //         borderRadius: BorderRadius.only(
+        //           bottomRight: Radius.circular(25),
+        //           bottomLeft: Radius.circular(25),
+        //         ),
+        //       )),
+        //   Container(
+        //     decoration: BoxDecoration(
+        //         borderRadius: BorderRadius.only(
+        //             bottomRight: Radius.circular(0),
+        //             bottomLeft: Radius.circular(0),
+        //             topLeft: Radius.circular(0),
+        //             topRight: Radius.circular(0)),
+        //         boxShadow: [
+        //           BoxShadow(
+        //               color: Colors.black26,
+        //               blurRadius: 5.0,
+        //               offset: Offset(0.0, 0.0))
+        //         ],
+        //         color: Colors.white),
+        //     child: Image(image: AssetImage("assets/image/page.png")),
+        //   ),
+        //   //******************************************************************************************************+ */
+        //   ListTile(
+        //     title: Padding(
+        //       padding: const EdgeInsets.all(8.0),
+        //       child: Text(
+        //         "Transferencia a ${widget.dinero}...",
+        //         style: TextStyle(
+        //             fontSize: 18,
+        //             color: Color(0xFFF0C7287),
+        //             fontWeight: FontWeight.w500),
+        //       ),
+        //     ),
+        //     subtitle: Padding(
+        //       padding: const EdgeInsets.all(8.0),
+        //       child: Text(FechaActual),
+        //     ),
+        //     leading: Image(image: AssetImage("assets/image/logo2.png")),
+        //     trailing: Padding(
+        //       padding: const EdgeInsets.all(8.0),
+        //       child: Text(
+        //         "$pdf ${widget._destinatario}",
+        //         style: TextStyle(
+        //             fontSize: 18,
+        //             color: Color(0xFFF979797),
+        //             fontWeight: FontWeight.w700),
+        //       ),
+        //     ),
+        //   ),
+        //   Padding(
+        //     padding: const EdgeInsets.all(15.0),
+        //     child: Divider(
+        //       height: 1,
+        //       color: Color(0xFFF979797),
+        //     ),
+        //   ),
+        //   Lista("Trasferencia a FERRETERIA SAN MIGUEL...", r"$ 18.500,00",
+        //       "02/10/2022 11:10:16"),
+        //   Padding(
+        //       padding: const EdgeInsets.all(15.0),
+        //       child: Divider(
+        //         height: 1,
+        //         color: Color(0xFFF979797),
+        //       )),
+          
+        // ],
       ),
-    );
+    ));
   }
 }
 
-Lista(people, montotrs, fecha) {
-  return ListTile(
-    title: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        people,
-        style: TextStyle(
-            fontSize: 18,
-            color: Color(0xFFF0C7287),
-            fontWeight: FontWeight.w500),
-      ),
-    ),
-    subtitle: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(fecha),
-    ),
-    leading: Image(image: AssetImage("assets/image/logo2.png")),
-    trailing: Text(
-      montotrs,
-      style: TextStyle(
-          fontSize: 18, color: Color(0xFFF979797), fontWeight: FontWeight.w700),
-    ),
-  );
-}
+
